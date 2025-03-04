@@ -1,6 +1,7 @@
 package br.com.model.dao;
 
 import br.com.model.dao.impl.SellerDaoJDBC;
+import db.DB;
 
 public class DaoFactory {
 
@@ -8,7 +9,7 @@ public class DaoFactory {
 	
 	public static SellerDao createSellerDao() { // interface SellerDao 
 		
-		return new SellerDaoJDBC(); // Ela irá instanciar uma implementação 
+		return new SellerDaoJDBC(DB.getConnection()); // Ela irá instanciar uma implementação 
 		
 		
 		
